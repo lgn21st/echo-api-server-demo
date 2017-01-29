@@ -1,5 +1,7 @@
 package: github.com/lgn21st/echo-api-server-demo
 import:
-- package: github.com/rubenv/sql-migrate
 - package: github.com/labstack/echo
   version: ^3.0.3
+- package: github.com/jinzhu/gorm
+  version: ~1.0.0
+- package: gopkg.in/yaml.v1

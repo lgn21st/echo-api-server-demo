@@ -4,6 +4,12 @@ development:
     dir: db/migrations
     table: migrations
 
+test:
+    dialect: postgres
+    datasource: dbname=echo_demo_test sslmode=disable
+    dir: db/migrations
+    table: migrations
+
 production:
     dialect: postgres
     datasource: dbname=echo_demo_prod sslmode=disable
