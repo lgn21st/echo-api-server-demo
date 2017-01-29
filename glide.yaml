@@ -1,0 +1,5 @@
+package: github.com/lgn21st/echo-api-server-demo
+import:
+- package: github.com/rubenv/sql-migrate
+- package: github.com/labstack/echo
+  version: ^3.0.3

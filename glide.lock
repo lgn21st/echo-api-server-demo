@@ -1,0 +1,8 @@
+hash: 5ff6aa02a630344d6d8e79e92ed02a27c898921235ec9b4c9f4e0a1a5b002cde
+updated: 2017-01-30T00:00:45.983489218+08:00
+imports:
+- name: github.com/labstack/echo
+  version: 8d504c1b699c757b267255c53b3e5219f9974abc
+- name: github.com/rubenv/sql-migrate
+  version: 1ed79968dfca5de79adb13c84523caaa4fc865a9
+testImports: []
