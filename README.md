@@ -43,6 +43,7 @@ curl -X POST \
 ```
 
 ### TODO
+- [ ] Unit Tests
 - [ ] Authentication and issue JWT token
 - [ ] Extract HTTP handler to handler sub-package
 - [ ] Extract Business (eg. Create User) to service sub-package
