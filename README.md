@@ -15,24 +15,24 @@ System dependencies
 Install
 ------------
 
-### Create database
+### Create Database
 The name of database is configurable at `dbconfig.yml`
 ```shell
 createdb echo_demo_dev
 ```
 
-### Install sql-migration
+### Database Schema Migration
 ```shell
 go get github.com/rubenv/sql-migrate/...
 sql-migrate up
 ```
 
-### Start Web Server
+### Start API Server
 ```shell
 go run server.go
 ```
 
-### Testing through curl
+### Testing API Server
 Create user
 ```shell
 curl -X POST \
