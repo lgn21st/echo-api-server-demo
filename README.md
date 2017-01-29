@@ -43,9 +43,9 @@ curl -X POST \
 ```
 
 ### TODO
-- [] Authentication and issue JWT token
-- [] Extract HTTP handler to handler sub-package
-- [] Extract Business (eg. Create User) to service sub-package
-- [] Update User's password (with JWT token)
-- [] Create order for user (with JWT token)
-- [] Deploy to Heroku
+- [ ] Authentication and issue JWT token
+- [ ] Extract HTTP handler to handler sub-package
+- [ ] Extract Business (eg. Create User) to service sub-package
+- [ ] Update User's password (with JWT token)
+- [ ] Create order for user (with JWT token)
+- [ ] Deploy to Heroku
