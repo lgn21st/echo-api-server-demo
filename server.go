@@ -17,6 +17,7 @@ func main() {
 
 	api.GET("/ping", handler.Ping)
 	api.POST("/users", userHandler.Create)
+	api.POST("/auth", userHandler.Auth)
 
 	api.Logger.Fatal(api.Start(":8080"))
 }

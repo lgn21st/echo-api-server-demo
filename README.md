@@ -43,7 +43,8 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 - [ ] Unit Tests
 - [x] Store user with encrypted password
 - [x] Add unique index to user's email column and avoid duplicated records
-- [ ] Authentication and issue JWT token
+- [x] Authentication user
+- [ ] Issue JWT token after authentication
 - [x] Extract HTTP handler to handler sub-package
 - [x] Extract Business logic (e.g. Create User in DB) to service sub-package
 - [ ] Update User's password (with JWT token)

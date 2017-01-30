@@ -23,3 +23,15 @@ func Create(c echo.Context) error {
 		return c.JSON(http.StatusOK, Response{Result: "ok"})
 	}
 }
+
+func Auth(c echo.Context) error {
+	u := &models.User{}
+	c.Bind(u)
+
+	err := service.AuthUser(u)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, Response{Result: err.Error()})
+	} else {
+		return c.JSON(http.StatusOK, Response{Result: "ok"})
+	}
+}
