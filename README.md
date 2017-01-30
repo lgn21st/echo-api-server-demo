@@ -39,6 +39,32 @@ go run server.go
 
 Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) and then import `api.postman_collection`.
 
+Step 1. Create User Account
+```shell
+curl --request POST \
+  --url http://localhost:8080/users \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data 'name=Daniel&email=daniel%40example.com&password=MyPassword'
+```
+
+Step 2. Auth and retrieve JWT Token
+```shell
+curl --request POST \
+  --url http://localhost:8080/auth \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data 'email=daniel%40example.com&password=MyPassword'
+```
+
+Step 3. Update User's name with JWT token
+```shell
+curl --request PUT \
+  --url http://localhost:8080/update_name \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbEBleGFtcGxlLmNvbSJ9.WGtSoCzB6TAOIJED5FWuvGbE_wiI9UVBv4BGHXvW_Og' \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data name=Daniel%20Lv
+```
+
+
 ### TODO
 - [ ] Unit Tests
 - [x] Store user with encrypted password
