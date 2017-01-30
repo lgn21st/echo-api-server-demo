@@ -44,8 +44,8 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 - [x] Store user with encrypted password
 - [x] Add unique index to user's email column and avoid duplicated records
 - [ ] Authentication and issue JWT token
-- [x] Extract HTTP handler to handlers sub-package
-- [x] Extract Business logic (e.g. Create User in DB) to services sub-package
+- [x] Extract HTTP handler to handler sub-package
+- [x] Extract Business logic (e.g. Create User in DB) to service sub-package
 - [ ] Update User's password (with JWT token)
 - [ ] Create order for user (with JWT token)
 - [ ] Introduce a validation framework into application layer
