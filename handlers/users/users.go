@@ -4,18 +4,22 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo"
-	"github.com/lgn21st/echo-api-server-demo/db"
 	"github.com/lgn21st/echo-api-server-demo/models"
+	"github.com/lgn21st/echo-api-server-demo/services"
 )
 
-type createSuccessResponse struct {
+type Response struct {
 	Result string `json:"result"`
 }
 
 func Create(c echo.Context) error {
 	u := &models.User{}
 	c.Bind(u)
-	db.DB.Create(&u)
 
-	return c.JSON(http.StatusOK, createSuccessResponse{Result: "ok"})
+	err := services.CreateUser(u)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, Response{Result: err.Error()})
+	} else {
+		return c.JSON(http.StatusOK, Response{Result: "ok"})
+	}
 }
