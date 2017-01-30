@@ -41,7 +41,7 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 
 ### TODO
 - [ ] Unit Tests
-- [ ] Store user with encrypted password
+- [x] Store user with encrypted password
 - [ ] Authentication and issue JWT token
 - [ ] Extract HTTP handler to handler sub-package
 - [ ] Extract Business (eg. Create User) to service sub-package
