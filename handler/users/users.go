@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo"
-	"github.com/lgn21st/echo-api-server-demo/models"
+	"github.com/lgn21st/echo-api-server-demo/model"
 	"github.com/lgn21st/echo-api-server-demo/service"
 )
 
@@ -18,7 +18,7 @@ type TokenResponse struct {
 }
 
 func Create(c echo.Context) error {
-	u := &models.User{}
+	u := &model.User{}
 	c.Bind(u)
 
 	err := service.CreateUser(u)
@@ -30,7 +30,7 @@ func Create(c echo.Context) error {
 }
 
 func Auth(c echo.Context) error {
-	u := &models.User{}
+	u := &model.User{}
 	c.Bind(u)
 
 	err := service.AuthUser(u)

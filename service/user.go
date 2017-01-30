@@ -7,13 +7,13 @@ import (
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/lgn21st/echo-api-server-demo/db"
-	"github.com/lgn21st/echo-api-server-demo/models"
+	"github.com/lgn21st/echo-api-server-demo/model"
 )
 
 var jwtTokenSecret = []byte("MyDarkSecret")
 
 type createError struct {
-	user *models.User
+	user *model.User
 }
 
 func (e *createError) Error() string {
@@ -21,7 +21,7 @@ func (e *createError) Error() string {
 }
 
 type findError struct {
-	user *models.User
+	user *model.User
 }
 
 func (e *findError) Error() string {
@@ -29,14 +29,14 @@ func (e *findError) Error() string {
 }
 
 type authError struct {
-	user *models.User
+	user *model.User
 }
 
 func (e *authError) Error() string {
 	return fmt.Sprintf("User auth failed for User{email: %v, password: %v}", e.user.Email, e.user.Password)
 }
 
-func CreateUser(u *models.User) error {
+func CreateUser(u *model.User) error {
 	db.DB.Create(u)
 
 	if db.DB.NewRecord(u) {
@@ -46,17 +46,17 @@ func CreateUser(u *models.User) error {
 	}
 }
 
-func FindUser(u *models.User) (*models.User, error) {
-	user := &models.User{}
+func FindUser(u *model.User) (*model.User, error) {
+	user := &model.User{}
 
-	if db.DB.Where(&models.User{Email: u.Email}).First(&user).Error != nil {
+	if db.DB.Where(&model.User{Email: u.Email}).First(&user).Error != nil {
 		return nil, &findError{user: u}
 	}
 
 	return user, nil
 }
 
-func AuthUser(u *models.User) error {
+func AuthUser(u *model.User) error {
 	user, err := FindUser(u)
 	if err != nil {
 		return err
@@ -70,7 +70,7 @@ func AuthUser(u *models.User) error {
 	return nil
 }
 
-func IssueToken(u *models.User) (string, error) {
+func IssueToken(u *model.User) (string, error) {
 	token := jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)
 	claims["name"] = u.Name
