@@ -5,9 +5,12 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/lgn21st/echo-api-server-demo/db"
 	"github.com/lgn21st/echo-api-server-demo/models"
 )
+
+var jwtTokenSecret = []byte("MyDarkSecret")
 
 type createError struct {
 	user *models.User
@@ -65,4 +68,12 @@ func AuthUser(u *models.User) error {
 	}
 
 	return nil
+}
+
+func IssueToken(u *models.User) (string, error) {
+	token := jwt.New(jwt.SigningMethodHS256)
+	claims := token.Claims.(jwt.MapClaims)
+	claims["name"] = u.Name
+
+	return token.SignedString(jwtTokenSecret)
 }

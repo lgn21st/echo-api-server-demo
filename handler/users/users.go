@@ -12,6 +12,11 @@ type Response struct {
 	Result string `json:"result"`
 }
 
+type TokenResponse struct {
+	Result string `json:"result"`
+	Token  string `json:"token"`
+}
+
 func Create(c echo.Context) error {
 	u := &models.User{}
 	c.Bind(u)
@@ -31,7 +36,12 @@ func Auth(c echo.Context) error {
 	err := service.AuthUser(u)
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, Response{Result: err.Error()})
-	} else {
-		return c.JSON(http.StatusOK, Response{Result: "ok"})
 	}
+
+	token, err := service.IssueToken(u)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, Response{Result: err.Error()})
+	}
+
+	return c.JSON(http.StatusOK, TokenResponse{Result: "ok", Token: token})
 }
