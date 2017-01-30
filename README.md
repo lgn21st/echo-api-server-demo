@@ -42,10 +42,11 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 ### TODO
 - [ ] Unit Tests
 - [x] Store user with encrypted password
-- [x] Validating user's email is unique before save to db
+- [x] Add unique index to user's email column and avoid duplicated records
 - [ ] Authentication and issue JWT token
 - [x] Extract HTTP handler to handlers sub-package
 - [x] Extract Business logic (e.g. Create User in DB) to services sub-package
 - [ ] Update User's password (with JWT token)
 - [ ] Create order for user (with JWT token)
+- [ ] Introduce a validation framework into application layer
 - [ ] Deploy to Heroku
