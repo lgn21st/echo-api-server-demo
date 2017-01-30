@@ -1,5 +1,7 @@
+
 Echo API Server Demo
 ====================
+
 
 System dependencies
 ------------
@@ -10,6 +12,7 @@ System dependencies
 - [Echo](https://github.com/labstack/echo)
 - [Gorm](https://github.com/jinzhu/gorm)
 - [Sql Migration](https://github.com/rubenv/sql-migrate)
+
 
 
 Install
@@ -38,6 +41,7 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 
 ### TODO
 - [ ] Unit Tests
+- [ ] Store user with encrypted password
 - [ ] Authentication and issue JWT token
 - [ ] Extract HTTP handler to handler sub-package
 - [ ] Extract Business (eg. Create User) to service sub-package
