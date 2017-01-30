@@ -24,6 +24,7 @@ func (u *User) encryptPassword() error {
 	return nil
 }
 
+// TODO: Move encryptPassword() to service instead of Gorm callback?
 func (u *User) BeforeCreate() error {
 	return u.encryptPassword()
 }
