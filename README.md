@@ -43,8 +43,8 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 - [ ] Unit Tests
 - [x] Store user with encrypted password
 - [ ] Authentication and issue JWT token
-- [ ] Extract HTTP handler to handler sub-package
-- [ ] Extract Business (eg. Create User) to service sub-package
+- [x] Extract HTTP handler to handlers sub-package
+- [ ] Extract Business (eg. Create User) to services sub-package
 - [ ] Update User's password (with JWT token)
 - [ ] Create order for user (with JWT token)
 - [ ] Deploy to Heroku

@@ -71,6 +71,17 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"url": "http://localhost:8080/ping",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
