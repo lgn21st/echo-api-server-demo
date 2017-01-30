@@ -12,7 +12,7 @@ type userCreateError struct {
 }
 
 func (e *userCreateError) Error() string {
-	return fmt.Sprintf("Create User error: %#v", e.user)
+	return fmt.Sprintf("Create User error.")
 }
 
 func CreateUser(u *models.User) error {
