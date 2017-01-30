@@ -69,6 +69,59 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Auth with form data",
+					"request": {
+						"url": "http://localhost:8080/auth",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "daniel@example.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "MyPassword",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Auth with json data",
+					"request": {
+						"url": "http://localhost:8080/auth",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"daniel@example.com\",\n\t\"password\": \"MyPassword\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
