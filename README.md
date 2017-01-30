@@ -47,7 +47,7 @@ Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinj
 - [x] Issue JWT token after authentication
 - [x] Extract HTTP handler to handler sub-package
 - [x] Extract Business logic (e.g. Create User in DB) to service sub-package
-- [ ] Update User's password (with JWT token)
+- [x] Update User's name (with JWT token)
 - [ ] Create order for user (with JWT token)
 - [ ] Introduce a validation framework into application layer
 - [ ] Deploy to Heroku

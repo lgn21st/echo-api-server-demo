@@ -122,6 +122,63 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Update name with json data",
+					"request": {
+						"url": "http://localhost:8080/update_name",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbEBleGFtcGxlLmNvbSJ9.WGtSoCzB6TAOIJED5FWuvGbE_wiI9UVBv4BGHXvW_Og",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Daniel Lv\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update name with form data",
+					"request": {
+						"url": "http://localhost:8080/update_name",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbEBleGFtcGxlLmNvbSJ9.WGtSoCzB6TAOIJED5FWuvGbE_wiI9UVBv4BGHXvW_Og",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Daniel Lv",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
