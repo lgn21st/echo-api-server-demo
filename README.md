@@ -32,15 +32,9 @@ sql-migrate up
 go run server.go
 ```
 
-### Testing API Server
-Create user
-```shell
-curl -X POST \
-  http://localhost:8080/users \
-  -d 'name=Daniel' \
-  -d 'password=MyPassword' \
-  -d 'email=daniel@example.com'
-```
+### How to testing
+
+Install [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) and then import `api.postman_collection`.
 
 ### TODO
 - [ ] Unit Tests
