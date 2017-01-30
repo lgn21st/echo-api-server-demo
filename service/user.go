@@ -1,8 +1,6 @@
 package service
 
 import (
-	"fmt"
-
 	"golang.org/x/crypto/bcrypt"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -11,38 +9,6 @@ import (
 )
 
 var JWTTokenSecret = []byte("MyDarkSecret")
-
-type createError struct {
-	user *model.User
-}
-
-func (e *createError) Error() string {
-	return fmt.Sprintf("Create user failed for User{name: %v, email: %v}", e.user.Name, e.user.Email)
-}
-
-type findError struct {
-	Email string
-}
-
-func (e *findError) Error() string {
-	return fmt.Sprintf("User not found for User{email: %v}", e.Email)
-}
-
-type authError struct {
-	user *model.User
-}
-
-func (e *authError) Error() string {
-	return fmt.Sprintf("User auth failed for User{email: %v, password: %v}", e.user.Email, e.user.Password)
-}
-
-type updateError struct {
-	user *model.User
-}
-
-func (e *updateError) Error() string {
-	return fmt.Sprintf("Update failed for User{email: %v, name: %v}", e.user.Email, e.user.Name)
-}
 
 func CreateUser(u *model.User) error {
 	if err := db.DB.Create(u).Error; err != nil {
